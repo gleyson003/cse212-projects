@@ -27,7 +27,21 @@
     /// in the list.
     /// </summary>
     /// <param name="numbers">array of integers</param>
-    private static void DisplaySumPairs(int[] numbers) {
+    private static void DisplaySumPairs(int[] numbers)
+    {
         // TODO Problem 2 - This should print pairs of numbers in the given array
+        HashSet<int> set = new HashSet<int>();
+        foreach (int number in numbers)
+        {
+            int secondNumber = 10 - number;
+            if (set.Contains(secondNumber))
+            {
+                Console.WriteLine(number + "" + secondNumber);
+            }
+            else
+            {
+                set.Add(number);
+            }
+        }
     }
 }
